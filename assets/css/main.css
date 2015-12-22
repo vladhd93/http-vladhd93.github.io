@@ -1,13 +1,7 @@
-@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,600");
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic");
 @import url("font-awesome.min.css");
 
-/*
-	Overflow by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
 
-/* Reset */
 
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
@@ -106,7 +100,7 @@
 		}
 
 		.container {
-			width: 960px;
+			width: 1140px;
 		}
 
 	}
@@ -1316,14 +1310,14 @@
 		background-size: auto, cover;
 		background-position: top left, center 0;
 		background-attachment: fixed, fixed;
-		font-family: 'Source Sans Pro', sans-serif;
+        font-family: 'Lora', serif;
 		font-size: 18pt;
 		line-height: 1.75em;
 		font-weight: 300;
 		letter-spacing: 1px;
 		color: #3a3939;
 		text-shadow: 0 0 0.5px rgba(58, 57, 57, 0.25);
-		-webkit-text-stroke: 0.25px;
+
 	}
 
 		body.is-scroll {
@@ -1343,7 +1337,7 @@
 		}
 
 	input, textarea, select {
-		font-family: 'Source Sans Pro', sans-serif;
+        font-family: 'Lora', serif;
 		font-size: 18pt;
 		line-height: 1.75em;
 		font-weight: 300;
@@ -1792,7 +1786,7 @@
 
 		.box.style1 {
 			background: #fff;
-			padding: 3em;
+			padding: 2.4em;
 		}
 
 			.box.style1 .image {
@@ -1950,7 +1944,7 @@
 				border-top: solid 1px rgba(255, 255, 255, 0.5);
 				color: rgba(255, 255, 255, 0.75);
 				text-shadow: 0 0 0.5px rgba(255, 255, 255, 0.1875);
-				font-size: 1em;
+				font-size: 0.8em;
 				text-transform: uppercase;
 				letter-spacing: 3px;
 				padding: 0;
@@ -2226,7 +2220,7 @@
 		/* Basic */
 
 			body, input, textarea, select {
-				font-size: 16pt;
+				font-size: 14pt;
 			}
 
 	}
@@ -2531,3 +2525,225 @@
 			}
 
 	}
+
+.about-me .col-left,
+.about-me .col-right{
+    width: 50%;
+    float: left;
+}
+
+.about-me img{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10%;
+}
+
+.about-me p{
+    text-align: initial;
+}
+
+.about-me .col-right p{
+    padding-left: 20px;
+}
+
+.effect {
+    position: relative;
+}
+
+.portfolio-item{
+    display: inline-block!important;
+    float: none!important;
+    margin: 15px;
+    z-index: 1000;
+    position: relative;
+}
+
+.portfolio-item img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.effect img {
+    width: 100%;
+    height: 100%;
+}
+.eff-9-2 {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    max-height: 250px;
+}
+
+.eff-9-2 .caption {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    -ms-transition: all 0.3s linear 0s;;
+    -o-transition: all 0.3s linear 0s;;
+    -webkit-transition: all 0.3s linear 0s;;
+    -moz-transition: all 0.3s linear 0s;;
+    transition: all 0.3s linear 0s;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+}
+.eff-9-2 .caption h4 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 1px solid white;
+    margin-top: 10px;
+}
+.eff-9-2 .caption p {
+    margin: 10px 0px;
+    text-align: left;
+    font-style: italic;
+    padding: 0px 10px;
+    font-size: 13px;
+}
+.eff-9-2 .caption a.btn {
+    width: 80px;
+    text-align: center;
+    display: block;
+    background: #35b88f;
+    color: #fff;
+    padding: 0;
+    border-radius: 10px;
+    margin: 20px auto 0px auto;
+    font-size: 12px;
+    text-decoration: none;
+
+}
+.eff-9-2 .overlay {
+    background: rgba(0,0,0,0.35);
+    width: 2px;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+}
+.eff-9-2 .overlay-1 {
+    -o-transition: all 0.5s linear 0.3s;
+    -moz-transition: all 0.5s linear 0.3s;
+    -ms-transition: all 0.5s linear 0.3s;
+    -webkit-transition: all 0.5s linear 0.3s;
+    transition: all 0.5s linear 0.3s;
+}
+.eff-9-2 .overlay-2 {
+    -o-transition: all 0.5s linear 0.6s;
+    -moz-transition: all 0.5s linear 0.6s;
+    -ms-transition: all 0.5s linear 0.6s;
+    -webkit-transition: all 0.5s linear 0.6s;
+    transition: all 0.5s linear 0.6s;
+}
+.eff-9-2:hover .overlay {
+    -webkit-transform: scale(400);
+    -moz-transform: scale(400);
+    -ms-transform: scale(400);
+    -o-transform: scale(400);
+    transform: scale(400);
+}
+.eff-9-2:hover .overlay-1 {
+    -moz-transition-delay: 0s;
+    -webkit-transition-delay: 0s;
+    -o-transition-delay: 0s;
+    -ms-transition-delay: 0s;
+    transition-delay: 0s;
+}
+.eff-9-2:hover .overlay-2 {
+    -moz-transition-delay: 0.2s;
+    -webkit-transition-delay: 0.2s;
+    -o-transition-delay: 0.2s;
+    -ms-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+}
+.eff-9-2:hover .caption {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    -moz-transition-delay: 0.4s;
+    -webkit-transition-delay: 0.4s;
+    -o-transition-delay: 0.4s;
+    -ms-transition-delay: 0.4s;
+    transition-delay: 0.4s;
+}
+
+.caption p{
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+.feat1 img{
+    width: 100%!important;
+    height: auto!important;
+    display: block!important;
+}
+
+
+.company{
+    border-bottom: 2px solid;
+}
+
+#header{
+    background: url("../../images/woodback.jpg") no-repeat;
+    background-size:cover;
+}
+
+#header header h1{
+    text-shadow: 3px 3px 2px rgba(0,0,0,.5);
+
+}
+
+#header header p{
+    text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+    font-weight: 700;
+    color: #fff;
+    font-size: 1em;
+}
+
+@media  all and (max-width: 992px) {
+    .about-me .col-left,
+    .about-me .col-right{
+        width: 100%;
+        float: none;
+    }
+
+    .eff-9-2 {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .portfolio-item{
+        width: 50%;
+    }
+}
+
+@media  all and (max-width: 767px){
+    .portfolio-item{
+        width: 80%;
+    }
+}
+
+@media  all and (max-width: 481px){
+    .portfolio-item{
+        width:100%;
+    }
+}
