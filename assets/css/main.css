@@ -1311,7 +1311,7 @@
 		background-position: top left, center 0;
 		background-attachment: fixed, fixed;
         font-family: 'Lora', serif;
-		font-size: 18pt;
+		font-size: 16pt;
 		line-height: 1.75em;
 		font-weight: 300;
 		letter-spacing: 1px;
@@ -1350,7 +1350,7 @@
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 400;
 		text-transform: uppercase;
-		line-height: 1.75em;
+		line-height: 1.5em;
 	}
 
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -1417,6 +1417,7 @@
 
 	p, ul, ol, dl, table {
 		margin-bottom: 1em;
+        font-size: 18px;
 	}
 
 	header {
@@ -2683,6 +2684,7 @@
     -o-transition-delay: 0.4s;
     -ms-transition-delay: 0.4s;
     transition-delay: 0.4s;
+    padding-top: 10%;
 }
 
 .caption p{
@@ -2707,11 +2709,19 @@
 }
 
 #header header h1{
-    text-shadow: 3px 3px 2px rgba(0,0,0,.5);
 
+    -webkit-text-shadow: 3px 3px 2px rgba(0,0,0,.5);
+    -moz-text-shadow: 3px 3px 2px rgba(0,0,0,.5);
+    -ms-text-shadow: 3px 3px 2px rgba(0,0,0,.5);
+    -o-text-shadow: 3px 3px 2px rgba(0,0,0,.5);
+    text-shadow: 3px 3px 2px rgba(0,0,0,.5);
 }
 
 #header header p{
+    -webkit-text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+    -moz-text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+    -ms-text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+    -o-text-shadow: 1px 1px 1px rgba(0,0,0,.5);
     text-shadow: 1px 1px 1px rgba(0,0,0,.5);
     font-weight: 700;
     color: #fff;
@@ -2733,6 +2743,23 @@
 
     .portfolio-item{
         width: 50%;
+    }
+}
+
+
+.ccc{
+    margin-bottom: 30px;
+}
+
+.custom-te{
+    color: #417E6B;
+    font-weight: 700;
+
+}
+
+@media  all and (max-width: 992px){
+    .about-me .col-left{
+        margin-bottom: 30px;
     }
 }
 
