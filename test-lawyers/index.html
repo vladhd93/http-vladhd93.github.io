@@ -136,6 +136,7 @@
                 </ul>
             </div>
             <nav class="main-nav">
+
                 <ul class="main-nav__list">
                     <li class="main-nav__item ">
                         <a href="#" class="main-nav__link">LAWYERS</a>
@@ -238,23 +239,20 @@
             </nav>
         </div>
     </div>
-    <div class="container">
+    <div class="container search-form__container">
         <div class="search-lawyer__form--wrp search-lawyer__form--wrp__h">
-            <form action="/" class="search-form-h">
+            <form action="" class="search-form-h">
                 <div class="search-box">
-                    <span class="search-icon-h"><svg class="icon icon-search">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use>
-                    </svg></span>
                     <input type="search" class="search-lawyer__form--field"
                            placeholder="Enter Your Search Criteria Here">
-                    <input class="search-lawyer__form--submit" value="search" type="submit">
+                    <input class="search-lawyer__form--submit-h" value="search" type="submit">
                 </div>
             </form>
         </div>
     </div>
 </header>
 
-<div class="main-wall">
+<div class="wall main-wall">
     <div class="container">
         <h1 class="main-wall__title">The First and Foremost Resource for the Best Legal Talent Worldwide</h1>
 
@@ -267,7 +265,7 @@
                 <h2>Find the Best Lawyers Now</h2>
 
                 <div class="search-lawyer__form--wrp">
-                    <form action="/">
+                    <form action="">
                         <div class="search-box">
                             <span class="search-icon-h"><svg class="icon icon-search">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use>
@@ -645,13 +643,18 @@
             <div class="firm-slider__item-col issue">
                 <div class="content-wrp">
                     <div class="firm-slider__item-col firm-slider__item-text  js--tab-wrapper tab-content">
-                        <h4 class="slider__item--title js--tab-title">In this Issue
+                        <h4 class="slider__item--title js--tab-title js--tab-title-m">In this Issue
                             <svg class="icon icon-chevron-thin-right">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink"
                                      xlink:href="#icon-chevron-thin-right"></use>
                             </svg>
                         </h4>
-
+                        <h4 class="slider__item--title slider__item--title-d">In this Issue
+                            <svg class="icon icon-chevron-thin-right">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="#icon-chevron-thin-right"></use>
+                            </svg>
+                        </h4>
                         <div class="content-wrp  js--tab-content tab-content">
 
                             <div class="descr">
@@ -670,13 +673,19 @@
             <div class="firm-slider__item-col metro">
                 <div class="content-wrp  js--tab-content tab-content">
                     <div class="firm-slider__item-col firm-slider__item-text js--tab-wrapper">
-                        <h4 class="slider__item--title js--tab-title">New York Metro
+                        <h4 class="slider__item--title js--tab-title js--tab-title-m">New York Metro
                             <svg class="icon icon-chevron-thin-right">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink"
                                      xlink:href="#icon-chevron-thin-right"></use>
                             </svg>
                         </h4>
 
+                        <h4 class="slider__item--title slider__item--title-d">In this Issue
+                            <svg class="icon icon-chevron-thin-right">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="#icon-chevron-thin-right"></use>
+                            </svg>
+                        </h4>
                         <div class="content-wrp  js--tab-content tab-content">
 
                             <div class="descr">
@@ -697,17 +706,17 @@
 </div>
 
 <div class="section-container">
-    <div class="review">
+    <div class="descr-inform">
 
-        <div class="review__col-left">
-            <h3 class="review-title">Purely Peer-Review</h3>
+        <div class="descr-inform__col-left">
+            <h3 class="descr-inform__title">Purely Peer-Review</h3>
 
-            <p class="review-text">Best Lawyers believes that the best lawyers know who the best lawyers are. Thus, our
+            <p class="descr-inform__text">Best Lawyers believes that the best lawyers know who the best lawyers are. Thus, our
                 recognitions
                 are based purely on the feedback we receive from lawyers already highlighted in our publication.
                 Learn more about our process today: <a href="#">Methodology.</a></p>
         </div>
-        <div class="review__col-right">
+        <div class="descr-inform__col-right">
             <img src="img/review1.jpg" alt="img"/>
         </div>
 
@@ -931,7 +940,7 @@
 
 <div class="container">
     <ul class="heading-nav__list">
-        <li class="heading-nav__item"><a href="#" class="heading-nav__link">lawyers of the year</a></li>
+        <li class="heading-nav__item "><a href="#" class="heading-nav__link heading-nav__law">lawyers of the year</a></li>
         <li class="heading-nav__item"><a href="#" class="heading-nav__link">Nominate an attorney</a></li>
         <li class="heading-nav__item"><a href="#" class="heading-nav__link">become an author</a></li>
         <li class="heading-nav__item"><a href="#" class="heading-nav__link">contact us</a></li>
@@ -1066,8 +1075,6 @@
                 <li class="footer-links__item"><a href="#">Best Law Firms</a></li>
             </ul>
             <p class="copyrights">© 2016 Best Lawyers — All Rights Reserved.</p>
-
-
         </div>
     </div>
 
@@ -1075,6 +1082,7 @@
 <script src="js/libs/jquery-1.12.3.min.js"></script>
 <script src="js/libs/jquery.slimmenu.min.js"></script>
 <script src="js/libs/swiper.min.js"></script>
+<script src="js/libs/doubleTap.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
