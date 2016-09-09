@@ -54,36 +54,37 @@ Table.prototype.renderRow = function () {
 
     function renderRowHandler() {
         return function () {
-            var rowTemplate = `<tr>
+            var newRow = document.createElement('tr');
+            var rowTemplate = `
                            <td class="num">
                                <button class="select-num">${_self.currentIndex}</button>
                                </td>
                                <td class="ingredients">
-            <div class="ingredients-item salami">
+            <div class="ingredients-item salami" data-type="salami">
               <span class="name">Salami <img src="images/salami.svg" alt=""></span>
               <button class="plus">+</button>
               <input type='number' class="input">
               <button class="minus">-</button>
             </div>
-            <div class="ingredients-item tomato">
+            <div class="ingredients-item tomato" data-type="tomato">
               <span class="name">tomato <img src="images/tomato.svg" alt=""></span>
               <button class="plus">+</button>
               <input type='number' class="input">
               <button class="minus">-</button>
             </div>
-            <div class="ingredients-item bacon">
+            <div class="ingredients-item bacon" data-type="bacon">
               <span class="name">bacon <img src="images/bacon.svg" alt=""></span>
               <button class="plus">+</button>
               <input type='number' class="input">
               <button class="minus">-</button>
             </div>
-            <div class="ingredients-item cheeze">
+            <div class="ingredients-item cheeze" data-type="cheeze">
               <span class="name">cheeze <img src="images/cheeze.svg" alt=""></span>
               <button class="plus">+</button>
               <input type='number' class="input">
               <button class="minus">-</button>
             </div>
-            <div class="ingredients-item green">
+            <div class="ingredients-item green" data-type="green">
               <span class="name">green <img src="images/green.svg" alt=""></span>
               <button class="plus">+</button>
               <input type='number' class="input">
@@ -94,24 +95,26 @@ Table.prototype.renderRow = function () {
                                <td>
                                <button class="remove">x</button>
                            </td>
-                           </tr>`;
+                           `;
             var pizzaTemplate = `
                 <li class="pizza-item">
                     <span class="pizza-index">${_self.currentIndex}</span>
                     <img src="images/pizza.svg" width="300" height="300" alt="" title="">
                 </li>
             `;
+            newRow.innerHTML = rowTemplate;
+            _self.basket.appendChild(newRow);
             _self.pizzaList.innerHTML += pizzaTemplate;
-            _self.basket.innerHTML += rowTemplate;
             _self.currentIndex += 1;
             _self.checkCurrentIndex();
             _self.updateItemCount();
             _self.setCurrentItem();
             _self.sumPrice('.total', '.sum-price');
+
         };
     }
-
     _self.addBtn.addEventListener("click", renderRowHandler());
+
 };
 
 Table.prototype.removeItem = function () {
@@ -129,11 +132,12 @@ Table.prototype.removeItem = function () {
             _self.checkCurrentIndex();
             _self.updateItemCount();
             _self.setCurrentItem();
-            _self.basket.children[parseInt(currentIndex) - 1].classList.add('selected');
+            if(removeRow.classList.contains('selected')){
+                _self.basket.children[parseInt(currentIndex) - 1].classList.add('selected');
+            }
             _self.sumPrice('.total', '.sum-price');
         }
     }
-
     document.querySelector('body').addEventListener('click', removeSelfHandler);
 };
 
@@ -173,34 +177,6 @@ Table.prototype.sumPrice = function (sumArr, cell) {
     displaySumCell.innerHTML = sum;
 };
 
-Table.prototype.ingradientsOptions = function () {
-  //var salamiItem = {
-  //    plus:document.querySelector('.ingredients-item.salami .plus'),
-  //    minus: document.querySelector('.ingredients-item.salami .minus'),
-  //    input: document.querySelector('.ingredients-item.salami input')
-  //};
-  //  var itemsArr = [];
-  //  var salamiItem = document.querySelector(".ingredients-item.salami"),
-  //      salamiItemInput = document.querySelector(".ingredients-item.salami .input"),
-  //      tomatoItem = document.querySelector(".ingredients-item.tomato"),
-  //      tomatoItemInput = document.querySelector(".ingredients-item.tomato .input"),
-  //      baconItem = document.querySelector(".ingredients-item.bacon"),
-  //      baconItemInput = document.querySelector(".ingredients-item.bacon .input"),
-  //      cheezeItem = document.querySelector(".ingredients-item.cheeze"),
-  //      cheezeItemInput = document.querySelector(".ingredients-item.cheeze .input"),
-  //      greenItem = document.querySelector(".ingredients-item.green"),
-  //      greenItemInput = document.querySelector(".ingredients-item.green .input");
-    function clickActionHandler(event){
-        var target = event.target;
-        if(target.classList.contains("plus")){
-            target.nextElementSibling.value++;
-        }
-        if(target.classList.contains("minus")){
-            target.previousElementSibling.value--;
-        }
-    }
-    document.querySelector('.ingredients').addEventListener('click',clickActionHandler);
-};
 
 
 Table.prototype.updateItemCost = function () {
@@ -220,8 +196,7 @@ Table.prototype.updateItemCost = function () {
             newImg.classList.add('ingredient');
             document.querySelector('.pizza-item.active').appendChild(newImg);
             var name = target.parentNode.dataset.name;
-            console.log(name);
-            var input = document.querySelector('.ingredients-item'+'.'+name+' .input');
+            var input = document.querySelector('.selected .ingredients-item'+'.'+name+' .input');
             input.value++;
         }
         var li = target.closest('li');
@@ -258,8 +233,62 @@ Table.prototype.updateItemCount = function () {
     this.itemCount.innerHTML = itemsArray.length;
 };
 
+
+Table.prototype.setActiveFirst = function (pizza,row) {
+    var pizzaActive = document.querySelectorAll(pizza),
+        rowActive = document.querySelectorAll(row);
+    pizzaActive[0].classList.add('active');
+    rowActive[0].classList.add('selected');
+};
+
+Table.prototype.ingradientsOptions = function () {
+    //var salamiItem = {
+    //    plus:document.querySelector('.ingredients-item.salami .plus'),
+    //    minus: document.querySelector('.ingredients-item.salami .minus'),
+    //    input: document.querySelector('.ingredients-item.salami input')
+    //};
+    //  var itemsArr = [];
+    //  var salamiItem = document.querySelector(".ingredients-item.salami"),
+    //      salamiItemInput = document.querySelector(".ingredients-item.salami .input"),
+    //      tomatoItem = document.querySelector(".ingredients-item.tomato"),
+    //      tomatoItemInput = document.querySelector(".ingredients-item.tomato .input"),
+    //      baconItem = document.querySelector(".ingredients-item.bacon"),
+    //      baconItemInput = document.querySelector(".ingredients-item.bacon .input"),
+    //      cheezeItem = document.querySelector(".ingredients-item.cheeze"),
+    //      cheezeItemInput = document.querySelector(".ingredients-item.cheeze .input"),
+    //      greenItem = document.querySelector(".ingredients-item.green"),
+    //      greenItemInput = document.querySelector(".ingredients-item.green .input");
+
+    function clickActionHandler(event){
+        function getRandom(min, max) {
+            return Math.round(Math.random() * (max - min) + min);
+        }
+        var target = event.target;
+       if(target.closest('.selected')){
+           if(target.classList.contains("plus")){
+               target.nextElementSibling.value++;
+               var type = target.closest('.ingredients-item').dataset.type;
+               var newImg = document.createElement('img');
+               newImg.src ='images/'+type+'.svg';
+               newImg.style.top = getRandom(25, 240) + "px";
+               newImg.style.left = getRandom(25, 240) + "px";
+               newImg.classList.add('ingredient');
+               newImg.classList.add(type);
+               document.querySelector('.pizza-item.active').appendChild(newImg);
+           }
+           if(target.classList.contains("minus")){
+               target.previousElementSibling.value--;
+
+           }
+       }
+    }
+
+    document.querySelector('.orders').addEventListener('click',clickActionHandler);
+};
+
 var table = new Table('.add-pizza', '.basket tbody', '.num', '.select-num', '.ingredients-list', '.total', '.list', '.pizza-item');
 table.checkCurrentIndex();
+table.setActiveFirst('.pizza-item','.orders tr');
 table.renderRow();
 table.removeItem();
 table.updateItemCount();
@@ -267,6 +296,7 @@ table.updateItemCost();
 table.setCurrentItem();
 table.sumPrice('.total', '.sum-price');
 table.ingradientsOptions();
+
 var pizzaBuilder = new PizzaBuilder();
 pizzaBuilder.renderSidebar('.ingredients-list', 'public/config.json');
 
